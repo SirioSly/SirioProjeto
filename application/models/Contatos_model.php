@@ -34,6 +34,6 @@ class Contatos_model extends CI_Model {
         $this->db->where('id', $data['id']);
         $this->db->set($data);
         return $this->db->update('contatos');
-        
+         
     }
 }

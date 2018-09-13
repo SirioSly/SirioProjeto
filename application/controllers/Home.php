@@ -6,17 +6,17 @@ class Home extends CI_Controller {
 
     function __construct() {
         parent::__construct();
-        $this->load->model('Contatos_model', 'contatos');
+        $this->load->model('Contatos_model','contatos'); 
         //contatos é um alias para o Contatos_model 
     }
 
     public function index() {
-//        $this->load->view('template/header');
-        $dados['acronico'] = "Sirio";
-        $dados['completo'] = "Sirio Projeto";
+        $this->load->view('template/header');
+        $dados['acronico'] = "Sirio Projeto";
+        $dados['completo'] = "Meu Projeto";
         $dados['contatos'] = $this->contatos->listar();
         $this->load->view('home', $dados);
-//        $this->load->view('template/footer');
+       $this->load->view('template/footer');
     }
+    
 }
-   
