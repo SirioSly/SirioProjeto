@@ -11,6 +11,9 @@ class Contatos_model extends CI_Model {
     function listar() {
         $this->db->select('*');
         $this->db->from('contatos');
+        $this->db->join('funcao','funcao.idfuncao = contatos.funcao_idfuncao');
+        $this->db->order_by('nomeFuncao','ABC');
+        $this->db->order_by('nome','ABC');
         $query = $this->db->get();
         return $query->result();
     }
@@ -26,14 +29,17 @@ class Contatos_model extends CI_Model {
 
     function editar($id) {
         $this->db->where('id', $id);
+
         $result = $this->db->get('contatos');
+       
+        
         return $result->result();
     }
-    
+
     function atualizar($data) {
         $this->db->where('id', $data['id']);
         $this->db->set($data);
         return $this->db->update('contatos');
-         
     }
+
 }
