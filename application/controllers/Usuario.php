@@ -6,8 +6,12 @@ class Usuario extends CI_Controller {
 
     function __construct() {
         parent::__construct();
-         if(!$this->session->userdata('estou_logado')){
+         if(!$this->session->userdata('estou_logado')){{
          redirect('Login');}
+         } elseif ($this->session->userdata('logado')->perfilAcesso != "ADM") {
+             redirect('home');
+        }
+        
         $this->load->model('Usuario_model', 'usuario');
         //contatos é um alias para o Contatos_model 
     }
