@@ -2,37 +2,36 @@
 
     <div class="container">
 
-        <div class="row"></div>
+       
 
-        <div class="col-xs-1 col-sm-1 col-lg-3"></div>
-        <div class="col-xs-10 col-sm-10 col-lg-6">
+       
         <?php
         // put your code here
         
         echo "<br>";
-    //        echo $completo;
+        echo $completo;
         echo "<p>";
         ?>
         <h2>Usuário</h2>
         <?php echo form_open('usuario/inserir'); ?>
         <div class="form-group">
             <label for="nomeUsuario">Nome Usuário</label>
-            <input name="nomeUsuario" type="text" class="col-sm-6 form-control"  id="nomeUsuario"> 
+            <input name="nomeUsuario" type="text" class=" form-control"  id="nomeUsuario"> 
         </div>
 
         <div class="form-group">
             <label for="user">Usuário</label>
-            <input class="col-sm-6 form-control " id="user" name="user" type="text" required/>
+            <input class=" form-control " id="user" name="user" type="text" required/>
         </div>
         
          <div class="form-group">
             <label for="senha">Senha</label>
-            <input class="col-sm-6 form-control " id="senha" name="senha" type="password" required/>
+            <input class=" form-control " id="senha" name="senha" type="password" required/>
         </div>
         
          <div class="form-group">
             <label for="perfilAcesso">Perfil Acesso</label>
-            <select class="col-sm-6 form-control" id="perfilAcesso" name="perfilAcesso" type="text"/>
+            <select class="-control" id="perfilAcesso" name="perfilAcesso" type="text"/>
             <option value=""></option>
             <option value="ADM">Administrador</option>
             <option value="USER">Usuário</option>

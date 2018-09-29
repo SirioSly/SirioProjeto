@@ -1,4 +1,4 @@
-<?php
+ <?php
  
 defined('BASEPATH') OR exit('No direct script access allowed');
  
@@ -6,6 +6,8 @@ class Funcao extends CI_Controller {
  
     function __construct() {
         parent::__construct();
+         if(!$this->session->userdata('estou_logado')){
+         redirect('Login');}
         $this->load->model('Funcao_model', 'funcao');
         //contatos é um alias para o Contatos_model
     }

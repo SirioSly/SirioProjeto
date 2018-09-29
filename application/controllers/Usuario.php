@@ -6,14 +6,16 @@ class Usuario extends CI_Controller {
 
     function __construct() {
         parent::__construct();
+         if(!$this->session->userdata('estou_logado')){
+         redirect('Login');}
         $this->load->model('Usuario_model', 'usuario');
         //contatos é um alias para o Contatos_model 
     }
 
     public function index() {
         $this->load->view('template/header');
-        $dados['acronico'] = "MPF";
-        $dados['completo'] = "Meu Projeto Framework";
+        $dados['acronico'] = "Sirio";
+        $dados['completo'] = "SirioSly";
         $dados['usuario'] = $this->usuario->listar();
         $this->load->view('usuario', $dados);
         $this->load->view('template/footer');
