@@ -26,7 +26,7 @@
         
          <div class="form-group">
             <label for="senha">Senha</label>
-            <input class=" form-control " id="senha" name="senha" type="password" required/>
+            <input class=" form-control " id="senha" name="senha" type="password" required placeholder="No mínimo 8 Caracteres" minlength="8"/>
         </div>
         
          <div class="form-group">
