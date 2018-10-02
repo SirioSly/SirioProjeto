@@ -21,7 +21,7 @@ and open the template in the editor.
   ele: 'body', // which element to append to
   type: 'success', // (null, 'info', 'error', 'success')
   offset: {from: 'top', amount: 20}, // 'top', or 'bottom'
-  align: 'right', // ('left', 'right', or 'center')
+  align: 'center', // ('left', 'right', or 'center')
   width: 250, // (integer, or 'auto')
   delay: 4000,
   allow_dismiss: true,

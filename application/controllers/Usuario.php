@@ -30,9 +30,14 @@ class Usuario extends CI_Controller {
         $data['user'] = mb_convert_case ($this->input->post('user'), MB_CASE_LOWER);
         $data['senha'] = md5($this->input->post('senha'));
         $data['perfilAcesso']= mb_convert_case($this->input->post('perfilAcesso'),MB_CASE_UPPER);
-
-        $this->usuario->inserir($data);
-        redirect('usuario');
+        $result = $this->usuario->inserir($data);
+        if ($result == true) {
+            $this->session->set_flashdata('Sucesso', 'Msg');
+            redirect('usuario');
+        } else {
+            $this->session->set_flashdata('Falha', 'msg');
+            redirect('usuario');
+        }
     }
 
     public function excluir($id) {
