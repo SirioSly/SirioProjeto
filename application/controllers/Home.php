@@ -14,7 +14,7 @@ class Home extends CI_Controller {
 
     public function index() {
         $this->load->view('template/header');
-        $dados['acronico'] = "Sirio Projeto";
+        $dados['acronico'] = "";
         $dados['completo'] = "Meu Projeto";
         $this->load->view('Home', $dados);
         $this->load->view('template/footer');
