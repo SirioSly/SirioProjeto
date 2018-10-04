@@ -32,17 +32,23 @@ class Usuario extends CI_Controller {
         $data['perfilAcesso']= mb_convert_case($this->input->post('perfilAcesso'),MB_CASE_UPPER);
         $result = $this->usuario->inserir($data);
         if ($result == true) {
-            $this->session->set_flashdata('Sucesso', 'Msg');
+            $this->session->set_flashdata('sucesso', 'Msg');
             redirect('usuario');
         } else {
-            $this->session->set_flashdata('Falha', 'msg');
+            $this->session->set_flashdata('falha', 'msg');
             redirect('usuario');
         }
     }
 
     public function excluir($id) {
-        $this->usuario->deletar($id);
-        redirect('usuario');
+            $result = $this->usuario->deletar($id);
+        if ($result == true) {
+            $this->session->set_flashdata('excluirS', 'Msg');
+            redirect('usuario');
+        } else {
+            $this->session->set_flashdata('excluirF', 'msg');
+            redirect('usuario');
+        }
     }
 
     function editar($id) {
@@ -60,7 +66,14 @@ class Usuario extends CI_Controller {
         $data['user'] = mb_convert_case ($this->input->post('user'), MB_CASE_LOWER);
         $data['senha'] = md5($this->input->post('senha'));
         $data['perfilAcesso']= mb_convert_case($this->input->post('perfilAcesso'),MB_CASE_UPPER);
-        $this->usuario->atualizar($data);
-        redirect('usuario');
+           $result = $this->usuario->atualizar($data);
+        if ($result == true) {
+            $this->session->set_flashdata('sucessoA', 'Msg');
+            redirect('usuario');
+        } else {
+            $this->session->set_flashdata('falhaA', 'msg');
+            redirect('usuario');
+        }
     }
-  }
+
+}

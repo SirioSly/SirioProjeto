@@ -11,9 +11,8 @@ class Funcao extends CI_Controller {
         } elseif ($this->session->userdata('logado')->perfilAcesso != "ADM") {
             redirect('Home');
         }
-            $this->load->model('Funcao_model', 'funcao');
-            //contatos é um alias para o Contatos_model
-        
+        $this->load->model('Funcao_model', 'funcao');
+        //contatos é um alias para o Contatos_model
     }
 
     public function index() {
@@ -27,14 +26,25 @@ class Funcao extends CI_Controller {
 
     public function inserir() {
         $dados['nomeFuncao'] = $this->input->post('nomeFuncao');
-
-        $this->funcao->inserir($dados);
-        redirect('funcao');
+        $result = $this->funcao->inserir($dados);
+        if ($result == true) {
+            $this->session->set_flashdata('sucesso', 'Msg');
+            redirect('funcao');
+        } else {
+            $this->session->set_flashdata('falha', 'msg');
+            redirect('funcao');
+        }
     }
 
     public function excluir($id) {
-        $this->funcao->deletar($id);
-        redirect('funcao');
+        $result = $this->funcao->deletar($id);
+        if ($result == true) {
+            $this->session->set_flashdata('excluirS', 'Msg');
+            redirect('funcao');
+        } else {
+            $this->session->set_flashdata('excluirF', 'msg');
+            redirect('funcao');
+        }
     }
 
     function editar($id) {
@@ -49,8 +59,15 @@ class Funcao extends CI_Controller {
     public function atualizar() {
         $data['idfuncao'] = $this->input->post('idfuncao');
         $data['nomeFuncao'] = $this->input->post('nomeFuncao');
-        $this->funcao->atualizar($data);
-        redirect('funcao');
+           $result = $this->funcao->atualizar($data);
+        if ($result == true) {
+            $this->session->set_flashdata('sucessoA', 'Msg');
+            redirect('funcao');
+        } else {
+            $this->session->set_flashdata('falhaA', 'msg');
+            redirect('funcao');
+        }
     }
 
 }
+
