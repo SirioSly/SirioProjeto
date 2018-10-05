@@ -56,6 +56,14 @@ and open the template in the editor.
                             </li>
                         </ul>
                     </div>
+                                   
+                    <?php
+                    if ($this->session->userdata('estou_logado')) {
+                        echo $this->session->userdata('logado')->nomeUsuario;
+                        ?>
+                        &nbsp;<a class="btn btn-primary mb-2" href="<?php echo base_url() . 'login/sair'; ?>">Sair</a>
+                    <?php } ?>
                 </nav>
             </div>
+            
         <?php }?>
