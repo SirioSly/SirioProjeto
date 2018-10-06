@@ -14,11 +14,15 @@
     <p></p>
     <a class="btn btn-primary" href="<?php echo base_url() . 'contato' ?>">Contato</a>
     <?php if ($this->session->userdata('logado')->perfilAcesso == 'ADM') { ?>
-       
-        <a class="btn btn-primary" href="<?php echo base_url() . 'funcao' ?>">Função</a>
-        
-        <a class="btn btn-primary" href="<?php echo base_url() . 'usuario' ?>">Usuário</a>
-        
-    <?php }?>
 
-</div>
+        <a class="btn btn-primary" href="<?php echo base_url() . 'funcao' ?>">Função</a>
+
+        <a class="btn btn-primary" href="<?php echo base_url() . 'usuario' ?>">Usuário</a>
+        <p></p>
+    <?php } ?>
+         
+    <br>
+    
+    </body>
+        <br>
+   </div>

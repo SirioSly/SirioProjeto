@@ -98,6 +98,6 @@
     </script>
 
 <?php } ?>
-
+<body background="imagens/reid.jpg" height="100%" width="100%">
 </body>
 </html>

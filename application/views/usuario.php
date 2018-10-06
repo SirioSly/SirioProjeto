@@ -16,12 +16,12 @@
         <?php echo form_open('usuario/inserir'); ?>
         <div class="form-group">
             <label for="nomeUsuario">Nome Usuário</label>
-            <input name="nomeUsuario" type="text" class=" form-control"  id="nomeUsuario"> 
+            <input name="nomeUsuario" type="text" class=" form-control"placeholder="Nome"   id="nomeUsuario"> 
         </div>
 
         <div class="form-group">
             <label for="user">Usuário</label>
-            <input class=" form-control " id="user" name="user" type="text" required/>
+            <input class=" form-control " id="user" name="user" type="text"placeholder="Nome usuario"  required/>
         </div>
         
          <div class="form-group">
