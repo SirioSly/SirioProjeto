@@ -28,7 +28,7 @@ and open the template in the editor.
 
         <?php if ($this->session->userdata('estou_logado')) { ?>
             <div class="container"  >
-                <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
                     <a class="navbar-brand" href="home">Sistema do Sirio</a>
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" 
                             aria-expanded="false" aria-label="Toggle navigation">

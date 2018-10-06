@@ -1,34 +1,35 @@
+<!DOCTYPE html>
+
 <div class="container">
+    
+
+    <div class="row"></div>
+
+    <div class="col-xs-1 col-sm-1 col-lg-3"></div>
+    <!--        <div class="col-xs-10 col-sm-10 col-lg-6">-->
+
+    <font  style="font-family:Century Gothic"> <h2><center>Login</center></h2>
+    <?php echo form_open('login/autenticar'); ?>
+    <center>
     <div class="form-group">
-        <div class="form-group"></div>
-        <div class="form-group">
-            <div class="form-group">
-                <h2 class="">Login</h2>
-            </div>
-            <div class="form-group">
-                <?php echo form_open('login/autenticar'); ?>
-                <div class="form-group">
-                    <label class="" for="usuario">Usuário</label>
-                    <input class="form-control" type="text" required="required" name="usuario" id="usuario">
-
-                </div>
-                <div class="form-group">
-                    <label class="" for="senha">Senha</label>
-                    <input class="form-control" type="password" required="required" name="senha" id="senha">
-
-                </div>
-                </br>
-                <input Class="btn-success form-control" type="submit" name="acao" value="Entrar" />
-                <p></p>
-                <input  Class="btn-secondary form-control" type="reset" />
-                <?php form_close(); ?>  
-            </div>
-        </div>
-        <div class=""></div>
+        <label for="nomeusuario">Nome Usuario:</label>
+        <input name="usuario" type="text" class="col-sm-6 form-control"  id="nomeUsuario">
     </div>
-</div>
-<script type="text/javascript">
-    $("#btn-lista").click(function () {
-        $("#div-lista").toggleClass("hide");
-    });
-</script>
+        </center>
+
+    <center>
+    <div class="form-group">
+        <label for="senha">Senha:</label>
+        <input name="senha" type="password" class="col-sm-6 form-control"  id="senha">
+    </div>
+    </center>
+
+
+    <p></p>
+    <center>
+    <input class="btn btn-dark" type="submit" value="Entrar"/>
+    <input class="btn btn-dark" type="reset" value="Redefinir"/>
+    </center>
+    <?php form_close(); ?>
+    <p></p>
+    

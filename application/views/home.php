@@ -9,20 +9,20 @@
     echo "<p>";
     ?>
 
-    <h2><dt> Home </dt></h2>
+    <h2><dt> <center>Home</center> </dt></h2>
 
     <p></p>
-    <a class="btn btn-primary" href="<?php echo base_url() . 'contato' ?>">Contato</a>
+    <center> <a class="btn btn-primary" href="<?php echo base_url() . 'contato' ?>">Contato</a></center>
     <?php if ($this->session->userdata('logado')->perfilAcesso == 'ADM') { ?>
-
-        <a class="btn btn-primary" href="<?php echo base_url() . 'funcao' ?>">Função</a>
-
-        <a class="btn btn-primary" href="<?php echo base_url() . 'usuario' ?>">Usuário</a>
+        <p></p>
+        <center> <a class="btn btn-primary" href="<?php echo base_url() . 'funcao' ?>">Função</a></center>
+        <p></p>
+        <center>  <a class="btn btn-primary" href="<?php echo base_url() . 'usuario' ?>">Usuário</a></center>
         <p></p>
     <?php } ?>
-         
+
     <br>
-    
+
     </body>
-        <br>
-   </div>
+    <br>
+</div>
