@@ -12,15 +12,15 @@
     <?php echo form_open('login/autenticar'); ?>
     <center>
     <div class="form-group">
-        <label for="nomeusuario">Nome Usuario:</label>
-        <input name="usuario" type="text" class="col-sm-6 form-control"  id="nomeUsuario">
+        <label for="nomeusuario">Nome Usuário:</label>
+        <input name="usuario" type="text" class="col-sm-6 form-control" placeholder="Nome Usuário" id="nomeUsuario">
     </div>
         </center>
 
     <center>
     <div class="form-group">
         <label for="senha">Senha:</label>
-        <input name="senha" type="password" class="col-sm-6 form-control"  id="senha">
+        <input name="senha" type="password" class="col-sm-6 form-control"placeholder="Senha"  id="senha">
     </div>
     </center>
 

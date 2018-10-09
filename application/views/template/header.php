@@ -28,7 +28,7 @@ and open the template in the editor.
 
         <?php if ($this->session->userdata('estou_logado')) { ?>
             <div class="container"  >
-                <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+                <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
                     <a class="navbar-brand" href="home">Sistema do Sirio</a>
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" 
                             aria-expanded="false" aria-label="Toggle navigation">
@@ -47,23 +47,27 @@ and open the template in the editor.
                                 </a>
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                     <a class="dropdown-item" href="<?php echo base_url() . 'contato' ?>">Contato</a>
-                                    <?php if($this->session->userdata('logado')->perfilAcesso == 'ADM'){?>
-                                    <div class="dropdown-divider"></div>
-                                    <a class="dropdown-item" href="<?php echo base_url() . 'funcao' ?>">Função</a>
-                                    <a class="dropdown-item" href="<?php echo base_url() . 'usuario' ?>">Usuário</a>
-                                    <?php }?>
+                                    <?php if ($this->session->userdata('logado')->perfilAcesso == 'ADM') { ?>
+                                        <div class="dropdown-divider"></div>
+                                        <a class="dropdown-item" href="<?php echo base_url() . 'funcao' ?>">Função</a>
+                                        <a class="dropdown-item" href="<?php echo base_url() . 'usuario' ?>">Usuário</a>
+                                    <?php } ?>
                                 </div>
                             </li>
                         </ul>
                     </div>
-                                   
+
                     <?php
                     if ($this->session->userdata('estou_logado')) {
+                        
                         echo $this->session->userdata('logado')->nomeUsuario;
                         ?>
+
                         &nbsp;<a class="btn btn-primary mb-2" href="<?php echo base_url() . 'login/sair'; ?>">Sair</a>
-                    <?php } ?>
-                </nav>
+    <?php } ?>
             </div>
-            
-        <?php }?>
+        </nav>
+    </div>
+
+<?php
+}
